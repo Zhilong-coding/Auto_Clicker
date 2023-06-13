@@ -16,8 +16,9 @@ os.system("color")
 # control the auto-clicker
 delay = 0.05
 button = Button.left
-start_stop_key = KeyCode(char='b')
-stop_key = KeyCode(char='e')
+start_stop_key = KeyCode(char='z')
+stop_key = KeyCode(char='q')
+change_interval = KeyCode(char='p')
 
 # font color
 class bcolors:
@@ -94,7 +95,21 @@ def on_press(key):
         print(f"\n{bcolors.OKGREEN}>>>>Exiting<<<<{bcolors.ENDC}")
         click_thread.exit()
         listener.stop()
-  
+
+    elif key == change_interval:
+        _change_interval()
+
+def _change_interval():
+    try:
+        if click_thread.running:
+            click_thread.stop_clicking()
+            print(f"{bcolors.FAIL}STOP CLICKING{bcolors.ENDC}")
+        click_thread.delay = float(input("\nPlease input the interval you want: "))
+        print(f"Click Interval is now {click_thread.delay}s\n")
+    except:
+        print("\nPlease make sure you entered a number (e.g. 0.1)")
+        _change_interval()
+
   
 with Listener(on_press=on_press) as listener:
     print(f"{bcolors.OKGREEN}>>>>Ready<<<<{bcolors.ENDC}\n")
