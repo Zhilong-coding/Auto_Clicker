@@ -5,6 +5,5 @@
 "Controlls"
 "Z to start/stop clicking"
 "Q to exit
-"P to change clicking interval"
 
 "Currently input lags when changing interval. Open to suggestion for a fix"
