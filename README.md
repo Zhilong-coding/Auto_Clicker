@@ -1,4 +1,4 @@
-"# Auto_Clicker" 
+# Auto_Clicker
 
 "Use Setup to install all required package"
 
