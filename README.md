@@ -7,9 +7,8 @@
 
 "Controlls"
 
-"Z to start/stop clicking"
+"z to start/stop clicking"
 
-"Q to exit
+"q to exit
 
-
-"Currently input lags when changing interval. Open to suggestion for a fix"
+"p to change click interval" - Super laggy since pynput is listening for input every 10ms
